@@ -1,18 +1,25 @@
+  @import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Luckiest+Guy&family=Roboto+Mono&family=Ubuntu&family=VT323&display=swap');
+
+
 *
 {
     box-sizing: border-box;
 }
 
-
+body
+{
+    background-color: rgb(250, 250, 250) ;
+}
 
 .main-log
 {
-    border: 1px solid black;
     width: 80vh;
     margin-top: 5%;
     padding: 50px;
     height: 40vh;
     border-radius: 30px;
+    background-color: rgb(29, 183, 255);
+    box-shadow: 3px 3px 15px 3px rgb(170, 170, 170);
 }
 
 .logs
@@ -22,6 +29,7 @@
 input[type=text]
 {
     padding-bottom: 20px;
+   
 }
 
 input[type=password]
@@ -32,7 +40,27 @@ input[type=password]
  #gtext
 {
     padding-bottom: 10px;
+   
 }
+
+#btn-log
+{
+      
+    background-color: rgb(253, 139, 32);
+    margin: 15px;
+    width: 100px;
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+   
+}
+#btn-log:hover
+{
+    width: 200px;
+    transition: .5s;
+    background-color:  rgb(255, 113, 47);
+}
+
 
 .content .word
 {
@@ -93,6 +121,7 @@ input[type=password]
         text-transform: uppercase;
         animation: waviy 1s infinite;
         animation-delay: calc(.2s * var(--i));
+        font-family: 'Luckiest Guy', cursive;
         
       }
       @keyframes waviy {
@@ -105,29 +134,18 @@ input[type=password]
       }
 
 
-/*------------------------Index ---------------*/
+/*------------------------home ---------------*/
+
 .cat-header h1
 {
     text-align: center;
-    margin: 50px;
+    margin: 20px;
     padding: 20px;
-    animation-name: example;
-    animation-duration: 4s;
-    animation-delay: 2s;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 10px;
+    color: rgb(255, 50, 91);
     
 }
-
-.cat-header
-{
-    
-    animation-timing-function: ease;
- 
-  position: relative;
-  transition: width 1s, height 1s, transform 1s;
-  animation: rotaion;
-
-}
-
 
 
 .card
@@ -135,6 +153,7 @@ input[type=password]
    text-align: center;
    cursor: pointer;
    box-shadow: 3px 3px 15px 3px rgb(233, 233, 233);
+   border: none;
    
 }
 
