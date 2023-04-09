@@ -84,8 +84,10 @@ game();
 
 const inputWord = () => {
     let userWord = inputField.value.toLocaleLowerCase();
+    var audio = new Audio("assets/music/yehey.mp3");
     if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext").value = "";
     if(userWord !== correctAnswer) return alert('Your answer is incorrect.');
+    if(userWord == correctAnswer) audio.play();
     alert("Wow! Your answer is correct!");
     document.getElementById("gtext").value = "";
     game();
@@ -146,8 +148,10 @@ game1();
 
 const inputWord1 = () => {
     let userWord = inputField1.value.toLocaleLowerCase();
+    var audio = new Audio("assets/music/yehey.mp3");
     if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext1").value = "";
     if(userWord !== correctAnswer1) return alert('Your answer is incorrect.');
+    if(userWord == correctAnswer1) audio.play();
     alert("Wow! Your answer is correct!"); 
     document.getElementById("gtext1").value = "";
     game1();
@@ -208,8 +212,10 @@ game2();
 
 const inputWord2 = () => {
     let userWord = inputField2.value.toLocaleLowerCase();
+    var audio = new Audio("assets/music/yehey.mp3");
     if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext2").value = "";
     if(userWord !== correctAnswer2) return alert('Your answer is incorrect.');
+    if(userWord == correctAnswer2) audio.play();
     alert("Wow! Your answer is correct!");
     document.getElementById("gtext2").value = "";
     game2();
