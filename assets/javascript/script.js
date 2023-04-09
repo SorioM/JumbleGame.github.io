@@ -116,3 +116,64 @@ const inputWord1 = () => {
 
 skipBtn1.addEventListener("click", game1);
 enterBtn1.addEventListener("click", inputWord1);
+
+
+//Games Script
+const games = 
+[
+    {
+        gamesWord:"Pokemon",
+        gameshint: "A role-playing game based around building a small team of monsters to battle other monsters in a quest to become the best."
+        
+    },
+    {
+        gamesWord:"Mobile Legend",
+        gameshint: "A multiplayer online battle arena (MOBA) game designed for mobile phones. This game developed by Moonton "
+    },
+    {
+        gamesWord:"Call of Duty",
+        gameshint: "A free-to-play first-person shooter video game developed by TiMi Studio Group and published by Activision for Android and iOS."
+    },
+    {
+        gamesWord:"Super mario",
+        gameshint: "The main hero of the Mushroom Kingdom. He's a trusted friend of Princess Peach, and he and his brother Luigi are known across the land for their acts of bravery."
+    },
+    {
+        gamesWord:"Among us",
+        gameshint: "a multiplayer game where between four and 10 players are dropped onto an alien spaceship. Each player is designated a private role as a “crewmate” or “impostor.”"
+    },
+]
+
+const wordText2 = document.querySelector(".games-word"),
+ hintText2 = document.querySelector(".games-hint span");
+ inputField2 = document.querySelector("#gtext2");
+skipBtn2 = document.querySelector(".skip-word2");
+enterBtn2 = document.querySelector(".enter-word2");
+
+let correctAnswer2;
+
+const game2 = () => {
+    let randomObj2 = games[Math.floor(Math.random() * games.length)];
+    let wordArray2 = randomObj2.gamesWord.split("");
+    for (let c = wordArray2.length -1 ; c > 0 ; c--){
+        let d = Math.floor(Math.random() * (c * 1));
+        [wordArray2[c], wordArray2[d]] = [wordArray2[d], wordArray2[c]]
+    }
+
+    wordText2.innerText = wordArray2.join("");
+    hintText2.innerText = randomObj2.gameshint;
+    correctAnswer2 = randomObj2.gamesWord.toLowerCase();
+    console.log(randomObj2);
+}
+game2();
+
+const inputWord2 = () => {
+    let userWord = inputField2.value.toLocaleLowerCase();
+    if(!userWord) return alert('Please enter your answer.');
+    if(userWord !== correctAnswer2) return alert('Your answer is incorrect.');
+    alert("Wow! You're answer is correct!");
+    game2();
+}
+
+skipBtn2.addEventListener("click", game2);
+enterBtn2.addEventListener("click", inputWord2);
