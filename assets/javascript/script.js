@@ -1,3 +1,40 @@
+// ----- AUTO CLEAR INPUT BOX ----- //
+
+function clr() {
+    document.getElementById("gtext").value = "";
+    document.getElementById("gtext1").value = "";
+    document.getElementById("gtext2").value = "";
+}
+
+// ----- ENTER KEYBOARD EVENT LISTENER ----- //
+
+var fruitsinput = document.getElementById("gtext");
+var animalsinput = document.getElementById("gtext1");
+var gamesinput = document.getElementById("gtext2");
+
+fruitsinput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("enterbtn").click();
+  }
+});
+
+animalsinput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("enterbtn1").click();
+    }
+});
+
+gamesinput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("enterbtn2").click();
+    }
+});
+
+// ----- FRUITS ----- //
+
 const fruits = 
 [
     {
@@ -57,7 +94,8 @@ const inputWord = () => {
 skipBtn.addEventListener("click", game);
 enterBtn.addEventListener("click", inputWord);
 
-//Animals Script
+// ----- ANIMALS ----- //
+
 const animals = 
 [
     {
@@ -118,7 +156,8 @@ skipBtn1.addEventListener("click", game1);
 enterBtn1.addEventListener("click", inputWord1);
 
 
-//Games Script
+// ----- GAMES ----- //
+
 const games = 
 [
     {
@@ -142,6 +181,27 @@ const games =
         gamesWord:"Among us",
         gameshint: "a multiplayer game where between four and 10 players are dropped onto an alien spaceship. Each player is designated a private role as a “crewmate” or “impostor.”"
     },
+    {
+        gamesWord:"mario",
+        gamesHint: "He is the title character of the video game franchise of the same name and the mascot of Japanese video game company Nintendo."
+        
+    },
+    {
+        gamesWord:"sora",
+        gamesHint: "He is the main protagonist and main playable character in most of the Kingdom Hearts series."
+    },
+    {
+        gamesWord:"pokemon",
+        gamesHint: "is a series of video games developed by Game Freak and published by Nintendo."
+    },
+    {
+        gamesWord:"megaman",
+        gamesHint: "He is known as Rockman in Japan, is a Japanese science fiction video game franchise created by Capcom."
+    },
+    {
+        gamesWord:"klonoa",
+        gamesHint: "It is a platform video game series created by Namco in 1997. It stars K _ _ N _ _ , an anthropomorphic creature who explores dream worlds."
+    }
 ]
 
 const wordText2 = document.querySelector(".games-word"),
