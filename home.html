@@ -10,6 +10,11 @@
     <title>Jumbled Words</title>
 </head>
 <body>
+    
+  <audio id="heartbeat" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3" preload="auto">
+    Your browser does not support the <code>audio</code> element.
+  </audio>
+    
   <audio autoplay loop>
     <source src="assets/music/bg_music.mp3" type="audio/mpeg"> 
   </audio>
@@ -20,7 +25,7 @@
         </div>
 
         <div class="d-flex justify-content-center gap-5"> 
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;" id="fruits">
             <img src="assets/images/fruitx.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Fruits</h5>
@@ -29,7 +34,7 @@
             </div>
           </div>
 
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 18rem;" id="animals">
             <img src="assets/images/animalx.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Animals</h5>
@@ -38,7 +43,7 @@
             </div>
           </div>
 
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 18rem;" id="games">
             <img src="assets/images/gamex.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Games</h5>
