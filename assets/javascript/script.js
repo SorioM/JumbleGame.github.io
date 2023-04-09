@@ -1,37 +1,8 @@
-// ----- AUTO CLEAR INPUT BOX ----- //
-
 function clr() {
     document.getElementById("gtext").value = "";
     document.getElementById("gtext1").value = "";
     document.getElementById("gtext2").value = "";
 }
-
-// ----- ENTER KEYBOARD EVENT LISTENER ----- //
-
-var fruitsinput = document.getElementById("gtext");
-var animalsinput = document.getElementById("gtext1");
-var gamesinput = document.getElementById("gtext2");
-
-fruitsinput.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("enterbtn").click();
-  }
-});
-
-animalsinput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      document.getElementById("enterbtn1").click();
-    }
-});
-
-gamesinput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      document.getElementById("enterbtn2").click();
-    }
-});
 
 // ----- FRUITS ----- //
 
@@ -39,8 +10,7 @@ const fruits =
 [
     {
         word:"grape",
-        hint: "A small and round fruit. It can use for making wine."
-        
+        hint: "A small and round fruit. It can use for making wine."   
     },
     {
         word:"banana",
@@ -57,11 +27,11 @@ const fruits =
     {
         word:"peach",
         hint: "It is a type of fruit which is botanically called drupe."
-    },
+    }
 ]
 
-const wordText = document.querySelector(".word"),
- hintText = document.querySelector(".hint span");
+const wordText = document.querySelector(".fruits-word"),
+ hintText = document.querySelector(".fruits-hint span");
  inputField = document.querySelector("input");
 skipBtn = document.querySelector(".skip-word");
 enterBtn = document.querySelector(".enter-word");
@@ -85,9 +55,10 @@ game();
 
 const inputWord = () => {
     let userWord = inputField.value.toLocaleLowerCase();
-    if(!userWord) return alert('Please enter your answer.');
+    if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext").value = "";
     if(userWord !== correctAnswer) return alert('Your answer is incorrect.');
-    alert("Wow! You're answer is correct!");
+    alert("Wow! Your answer is correct!");
+    document.getElementById("gtext").value = "";
     game();
 }
 
@@ -113,17 +84,17 @@ const animals =
     },
     {
         animalsWord:"panda",
-        animalsHint: "A black-and-white bear, has a body typical of bears. ."
+        animalsHint: "A black-and-white bear, has a body typical of bears."
     },
     {
         animalsWord:"crocodile",
-        animalsHint: "It is a kind of reptile that has tough skin composed of many large plates and scales. ."
-    },
+        animalsHint: "It is a kind of reptile that has tough skin composed of many large plates and scales."
+    }
 ]
 
 const wordText1 = document.querySelector(".animals-word"),
- hintText1 = document.querySelector(".animals-hint span");
- inputField1 = document.querySelector("#gtext1");
+hintText1 = document.querySelector(".animals-hint span");
+inputField1 = document.querySelector("#gtext1");
 skipBtn1 = document.querySelector(".skip-word1");
 enterBtn1 = document.querySelector(".enter-word1");
 
@@ -146,41 +117,20 @@ game1();
 
 const inputWord1 = () => {
     let userWord = inputField1.value.toLocaleLowerCase();
-    if(!userWord) return alert('Please enter your answer.');
+    if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext1").value = "";
     if(userWord !== correctAnswer1) return alert('Your answer is incorrect.');
-    alert("Wow! You're answer is correct!");
+    alert("Wow! Your answer is correct!"); 
+    document.getElementById("gtext1").value = "";
     game1();
 }
 
 skipBtn1.addEventListener("click", game1);
 enterBtn1.addEventListener("click", inputWord1);
 
-
 // ----- GAMES ----- //
 
 const games = 
 [
-    {
-        gamesWord:"Pokemon",
-        gameshint: "A role-playing game based around building a small team of monsters to battle other monsters in a quest to become the best."
-        
-    },
-    {
-        gamesWord:"Mobile Legend",
-        gameshint: "A multiplayer online battle arena (MOBA) game designed for mobile phones. This game developed by Moonton "
-    },
-    {
-        gamesWord:"Call of Duty",
-        gameshint: "A free-to-play first-person shooter video game developed by TiMi Studio Group and published by Activision for Android and iOS."
-    },
-    {
-        gamesWord:"Super mario",
-        gameshint: "The main hero of the Mushroom Kingdom. He's a trusted friend of Princess Peach, and he and his brother Luigi are known across the land for their acts of bravery."
-    },
-    {
-        gamesWord:"Among us",
-        gameshint: "a multiplayer game where between four and 10 players are dropped onto an alien spaceship. Each player is designated a private role as a “crewmate” or “impostor.”"
-    },
     {
         gamesWord:"mario",
         gamesHint: "He is the title character of the video game franchise of the same name and the mascot of Japanese video game company Nintendo."
@@ -205,8 +155,8 @@ const games =
 ]
 
 const wordText2 = document.querySelector(".games-word"),
- hintText2 = document.querySelector(".games-hint span");
- inputField2 = document.querySelector("#gtext2");
+hintText2 = document.querySelector(".games-hint span");
+inputField2 = document.querySelector("#gtext2");
 skipBtn2 = document.querySelector(".skip-word2");
 enterBtn2 = document.querySelector(".enter-word2");
 
@@ -215,13 +165,13 @@ let correctAnswer2;
 const game2 = () => {
     let randomObj2 = games[Math.floor(Math.random() * games.length)];
     let wordArray2 = randomObj2.gamesWord.split("");
-    for (let c = wordArray2.length -1 ; c > 0 ; c--){
-        let d = Math.floor(Math.random() * (c * 1));
-        [wordArray2[c], wordArray2[d]] = [wordArray2[d], wordArray2[c]]
+    for (let a = wordArray2.length -1 ; a > 0 ; a--){
+        let b = Math.floor(Math.random() * (a * 1));
+        [wordArray2[a], wordArray2[b]] = [wordArray2[b], wordArray2[a]]
     }
 
     wordText2.innerText = wordArray2.join("");
-    hintText2.innerText = randomObj2.gameshint;
+    hintText2.innerText = randomObj2.gamesHint;
     correctAnswer2 = randomObj2.gamesWord.toLowerCase();
     console.log(randomObj2);
 }
@@ -229,9 +179,10 @@ game2();
 
 const inputWord2 = () => {
     let userWord = inputField2.value.toLocaleLowerCase();
-    if(!userWord) return alert('Please enter your answer.');
+    if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext2").value = "";
     if(userWord !== correctAnswer2) return alert('Your answer is incorrect.');
-    alert("Wow! You're answer is correct!");
+    alert("Wow! Your answer is correct!");
+    document.getElementById("gtext2").value = "";
     game2();
 }
 
