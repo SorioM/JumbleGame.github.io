@@ -1,82 +1,79 @@
-  @import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Luckiest+Guy&family=Roboto+Mono&family=Ubuntu&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Luckiest+Guy&family=Roboto+Mono&family=Ubuntu&family=VT323&display=swap');
 
-
-*
-{
+* {
     box-sizing: border-box;
 }
 
-body
-{
+body {
     background-color: rgb(250, 250, 250) ;
 }
 
-/*
-.main-log
+/*-------------------LOADINGG SCREEN -------------*/
+.load-body
 {
-    width: 80vh;
-    margin-top: 5%;
-    padding: 50px;
-    height: 40vh;
-    border-radius: 30px;
-    background-color: rgb(29, 183, 255);
-    box-shadow: 3px 3px 15px 3px rgb(170, 170, 170);
+    background-color: rgb(255, 110, 14);
 }
 
-.logs
-{
-    gap: 15px;
-}
-input[type=text]
-{
-    padding-bottom: 20px;
-   
+.waviy {
+    text-align: center;
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 180px;
 }
 
-input[type=password]
-{
-    padding-bottom: 20px;
+.waviy span {
+    position: relative;
+    display: inline-block;
+    color: black;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    font-family: 'Luckiest Guy', cursive;
 }
-*/
- #gtext
-{
+
+@keyframes waviy {
+    0%,40%,100% {
+    transform: translateY(0)
+}
+    20% {
+          transform: translateY(-20px)
+        }
+}
+
+
+
+
+
+
+/* ----- HOME ----- */
+
+
+ #gtext {
+    padding-bottom: 10px; 
+}
+
+#gtext1 {
     padding-bottom: 10px;
-   
 }
 
-#gtext1
-{
-    padding-bottom: 10px;
-   
-}
-
-#gtext2
-{
-    padding-bottom: 10px;
-   
-}
-
-#btn-log
-{
-      
+#btn-log {
     background-color: rgb(253, 139, 32);
     margin: 15px;
     width: 100px;
     padding: 10px;
     color: white;
-    text-transform: uppercase;
-   
+    text-transform: uppercase;   
 }
-#btn-log:hover
-{
+
+#btn-log:hover {
     width: 200px;
     transition: .5s;
     background-color:  rgb(255, 113, 47);
 }
 
-
-.content .word
-{
+.content .fruits-word {
     font-size: 33px;
     font-weight: 500;
     text-align: center;
@@ -86,8 +83,7 @@ input[type=password]
     margin-top: 50px;
 }
 
-.content .animals-word
-{
+.content .animals-word {
     font-size: 33px;
     font-weight: 500;
     text-align: center;
@@ -97,8 +93,7 @@ input[type=password]
     margin-top: 50px;
 }
 
-.content .games-word
-{
+.content .games-word {
     font-size: 33px;
     font-weight: 500;
     text-align: center;
@@ -108,102 +103,57 @@ input[type=password]
     margin-top: 50px;
 }
 
-.content .details
-{
-    margin: 25px 0 20px;
-   
+.content .details {
+    margin: 25px 0 20px; 
 }
 
-.details p
-{
+.details p {
     font-weight: bold;
     margin-top: 80px;
 }
 
-.details span
-{
+.details span {
     font-weight: 200;
 }
 
-.buttons button
-{
+.buttons button {
 
     width: 150px;
 }
-.buttons
-{
+
+.buttons {
     display: flex;
     justify-content: center;
-     align-items: center;
-     gap: 7px;
+    align-items: center;
+    gap: 7px;
 }
 
 
 
-
-    .waviy {
-        text-align: center;
-        position: relative;
-        -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
-        font-size: 60px;
-        font-weight: bold;
-        margin-top: 40px;
-      }
-      .waviy span {
-        position: relative;
-        display: inline-block;
-        color: black;
-        text-transform: uppercase;
-        animation: waviy 1s infinite;
-        animation-delay: calc(.2s * var(--i));
-        font-family: 'Luckiest Guy', cursive;
-        
-      }
-      @keyframes waviy {
-        0%,40%,100% {
-          transform: translateY(0)
-        }
-        20% {
-          transform: translateY(-20px)
-        }
-      }
-
-
-/*------------------------home ---------------*/
-
-.cat-header h1
-{
+.cat-header h1 {
     text-align: center;
     margin: 20px;
     padding: 20px;
     font-family: 'Luckiest Guy', cursive;
     letter-spacing: 10px;
-    color: rgb(255, 50, 91);
-    font-size: 7vh;
-    
+    color: rgb(255, 50, 91);  
 }
 
 
-.card
-{
+.card {
    text-align: center;
    cursor: pointer;
    box-shadow: 3px 3px 15px 3px rgb(233, 233, 233);
-   border: none;
-   
+   border: none; 
 }
 
-.card:hover
-{
-    
-      
-    animation: shake 0.5s; 
-    animation-iteration-count: infinite; 
-      
+.card:hover {    
+    animation: shake 1s; 
+    animation-iteration-count: infinite;     
 }
 
+/* ----- ANIMATION ----- */
 
-/*------------Animation-----*/
 @keyframes rotation {
    
    0% {transform: rotate(180deg);}
