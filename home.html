@@ -31,7 +31,7 @@
             <div class="card-body">
               <h5 class="card-title">Animals</h5>
               <p class="card-text">All about animals.</p>
-              <a href="#" class="btn btn-primary">Play!</a>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#animalsModal">Play!</button>
             </div>
           </div>
 
@@ -48,7 +48,7 @@
     </div>
 
 
-  <!-- Modal -->
+  <!-- Modal for fruits-->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -70,6 +70,38 @@
                 <div class="buttons">
                     <button type="button" class="skip-word btn btn-secondary">Skip</button>
                     <button type="button" class="enter-word btn btn-primary">Enter</button>
+                </div>
+            </div>
+
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div> <!--end modal fruits-->
+
+  <!-- Modal for animals-->
+  <div class="modal fade" id="animalsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Animals</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="content">
+                <p class="animals-word"></p>
+                <div class="details" id="animals-details">
+                    <p class="animals-hint">Hint: <span> </span></p>
+                </div>
+
+                <div class="p-4">
+                <input type="text" class="form-control"  name="" id="gtext1" placeholder="Enter your answer">
+                </div>
+                <div class="buttons">
+                    <button type="button" class="skip-word1 btn btn-secondary">Skip</button>
+                    <button type="button" class="enter-word1 btn btn-primary">Enter</button>
                 </div>
             </div>
 
