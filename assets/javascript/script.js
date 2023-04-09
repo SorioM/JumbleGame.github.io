@@ -4,6 +4,33 @@ function clr() {
     document.getElementById("gtext2").value = "";
 }
 
+// ----- ENTER KEYBOARD EVENT LISTENER ----- //
+
+var fruitsinput = document.getElementById("gtext");
+var animalsinput = document.getElementById("gtext1");
+var gamesinput = document.getElementById("gtext2");
+
+fruitsinput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("enterbtn").click();
+  }
+});
+
+animalsinput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("enterbtn1").click();
+    }
+});
+
+gamesinput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("enterbtn2").click();
+    }
+});
+
 // ----- FRUITS ----- //
 
 const fruits = 
