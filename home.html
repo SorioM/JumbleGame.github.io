@@ -10,13 +10,18 @@
     <title>Document</title>
 </head>
 <body>
+
+  <audio autoplay>
+    <source src="assets/music/backgroundMusic.mp3" type="audio/mpeg"> 
+  </audio>
+ 
   <div class="back">
     <div class="container">
         <div class="cat-header">
             <h1>Category</h1>
         </div>
 
-        <div class="d-flex justify-content-center gap-5"> 
+        <div class="col-md-12 d-flex justify-content-center gap-5 "> 
         <div class="card" style="width: 18rem;">
             <img src="assets/images/fruitx.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -40,7 +45,7 @@
             <div class="card-body">
               <h5 class="card-title">Games</h5>
               <p class="card-text">All about games.</p>
-              <a href="#" class="btn btn-primary">Play!</a>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gamesModal">Play!</button>
             </div>
           </div>
 
@@ -110,7 +115,40 @@
         
       </div>
     </div>
-  </div>
+  </div><!--end of animals modals-->
+
+
+    <!-- Modal for Games-->
+    <div class="modal fade" id="gamesModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Games</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="content">
+                  <p class="games-word"></p>
+                  <div class="details" id="games-details">
+                      <p class="games-hint">Hint: <span> </span></p>
+                  </div>
+  
+                  <div class="p-4">
+                  <input type="text" class="form-control"  name="" id="gtext2" placeholder="Enter your answer">
+                  </div>
+                  <div class="buttons">
+                      <button type="button" class="skip-word2 btn btn-secondary">Skip</button>
+                      <button type="button" class="enter-word2 btn btn-primary">Enter</button>
+                  </div>
+              </div>
+  
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div> <!--end modal games-->
 
 </div>
 
