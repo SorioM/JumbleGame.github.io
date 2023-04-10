@@ -4,6 +4,9 @@ function clr() {
     document.getElementById("gtext").value = "";
     document.getElementById("gtext1").value = "";
     document.getElementById("gtext2").value = "";
+    document.getElementById("gtext3").value = "";
+    document.getElementById("gtext4").value = "";
+
 }
 
 // ----- ENTER KEYBOARD EVENT LISTENER ----- //
@@ -11,6 +14,8 @@ function clr() {
 var fruitsinput = document.getElementById("gtext");
 var animalsinput = document.getElementById("gtext1");
 var gamesinput = document.getElementById("gtext2");
+var musicinput = document.getElementById("gtext3");
+var cartooninput = document.getElementById("gtext4");
 
 fruitsinput.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -30,6 +35,20 @@ gamesinput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
       event.preventDefault();
       document.getElementById("enterbtn2").click();
+    }
+});
+
+musicinput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("enterbtn3").click();
+    }
+});
+
+cartooninput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("enterbtn4").click();
     }
 });
 
@@ -223,3 +242,123 @@ const inputWord2 = () => {
 
 skipBtn2.addEventListener("click", game2);
 enterBtn2.addEventListener("click", inputWord2);
+
+
+
+// ----- Music ----- //
+
+const music = 
+[
+    {
+        musicWord:"jazz",
+        musicHint: "____ music is a broad style of music characterized by complex harmony, syncopated rhythms, and a heavy emphasis on improvisation.",
+        musicBlank: "J__Z"
+    },
+
+    {
+        musicWord:"rock",
+        musicHint: "____ music is a broad style of music characterized by complex harmony, syncopated rhythms, and a heavy emphasis on improvisation.",
+        musicBlank: "_OC_"
+    },
+
+    {
+        musicWord:"r&b",
+        musicHint: "____ music is a broad style of music characterized by complex harmony, syncopated rhythms, and a heavy emphasis on improvisation.",
+        musicBlank: "_&_"
+    },
+    
+]
+
+const wordText3 = document.querySelector(".music-word"),
+hintText3 = document.querySelector(".music-hint span");
+inputField3 = document.querySelector("#gtext3");
+skipBtn3 = document.querySelector(".skip-word3");
+enterBtn3 = document.querySelector(".enter-word3");
+
+let correctAnswer3;
+
+const game3 = () => {
+    let randomObj3 = music[Math.floor(Math.random() * music.length)];
+    let wordArray3 = randomObj3.musicBlank.split("");
+    
+
+    wordText3.innerText = wordArray3.join("");
+    hintText3.innerText = randomObj3.musicHint;
+    correctAnswer3 = randomObj3.musicWord.toLowerCase();
+    console.log(randomObj3);
+}
+game3();
+
+const inputWord3 = () => {
+    let userWord = inputField3.value.toLocaleLowerCase();
+    var audio = new Audio("assets/music/yehey.mp3");
+    if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext3").value = "";
+    if(userWord !== correctAnswer3) return alert('Your answer is incorrect.');
+    if(userWord == correctAnswer3) audio.play();
+    alert("Wow! Your answer is correct!");
+    document.getElementById("gtext3").value = "";
+    game3();
+}
+
+skipBtn3.addEventListener("click", game3);
+enterBtn3.addEventListener("click", inputWord3);
+
+
+
+// ----- CARTOON ----- //
+
+const cartoon = 
+[
+    {
+        cartoonWord:"mickey mouse",
+        cartoonHint: "The most popular character of Walt Disney's animated cartoons and arguably the most popular cartoon star in the world.",
+        cartoonBlank: "M____y M___E"
+    },
+
+    {
+        cartoonWord:"bugs bunny",
+        cartoonHint: "He likes carrots and practical jokes. His catchphrases include “What's up, Doc?” “Of course, you know, this means war!” and “What a maroon!.",
+        cartoonBlank: "_UGS B_N_y"
+    },
+
+    {
+        cartoonWord:"spongebob",
+        cartoonHint: "Lives in Bikini Botttom and he always loves to cook Krabby Patty",
+        cartoonBlank: "S___G___B"
+    },
+    
+]
+
+const wordText4 = document.querySelector(".cartoon-word"),
+hintText4 = document.querySelector(".cartoon-hint span");
+inputField4 = document.querySelector("#gtext4");
+skipBtn4 = document.querySelector(".skip-word4");
+enterBtn4 = document.querySelector(".enter-word4");
+
+let correctAnswer4;
+
+const game4 = () => {
+    let randomObj4 = cartoon[Math.floor(Math.random() * cartoon.length)];
+    let wordArray4 = randomObj4.cartoonBlank.split("");
+    
+
+    wordText4.innerText = wordArray4.join("");
+    hintText4.innerText = randomObj4.cartoonHint;
+    correctAnswer4 = randomObj4.cartoonWord.toLowerCase();
+    console.log(randomObj4);
+}
+game4();
+
+const inputWord4 = () => {
+    let userWord = inputField4.value.toLocaleLowerCase();
+    var audio = new Audio("assets/music/yehey.mp3");
+    if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext4").value = "";
+    if(userWord !== correctAnswer4) return alert('Your answer is incorrect.');
+    if(userWord == correctAnswer4) audio.play();
+    alert("Wow! Your answer is correct!");
+    document.getElementById("gtext4").value = "";
+    game4();
+}
+
+skipBtn4.addEventListener("click", game4);
+enterBtn4.addEventListener("click", inputWord4);
