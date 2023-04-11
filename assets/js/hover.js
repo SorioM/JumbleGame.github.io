@@ -4,6 +4,7 @@ var fruitsHover = document.getElementById('fruits'),
   gamesHover = document.getElementById('games'),
   musicHover = document.getElementById('music'),
   cartoonHover = document.getElementById('cartoon'),
+  wheelsHover = document.getElementById('cartoon'),
   hearbeat = document.getElementById('heartbeat'),
 	audios = document.querySelectorAll('audio');
 console.log(audios);
@@ -40,11 +41,11 @@ heartbeat.pause();
 heartbeat.currentTime = 0;
 }, false);
 
-musicHover.addEventListener('mouseover', function() {
-  heartbeat.play();
-}, false);
-
-
 cartoonHover.addEventListener('mouseover', function() {
   heartbeat.play();
 }, false);
+
+wheelsHover.addEventListener('mouseleave', function() {
+  heartbeat.pause();
+  heartbeat.currentTime = 0;
+  }, false);

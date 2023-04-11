@@ -5,7 +5,7 @@ function clr() {
     document.getElementById("gtext1").value = "";
     document.getElementById("gtext2").value = "";
     document.getElementById("gtext3").value = "";
-    document.getElementById("gtext4").value = "";
+    document.getElementById("gtext5").value = "";
 
 }
 
@@ -16,6 +16,7 @@ var animalsinput = document.getElementById("gtext1");
 var gamesinput = document.getElementById("gtext2");
 var musicinput = document.getElementById("gtext3");
 var cartooninput = document.getElementById("gtext4");
+var wheelsinput = document.getElementById("gtext5");
 
 fruitsinput.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -362,3 +363,62 @@ const inputWord4 = () => {
 
 skipBtn4.addEventListener("click", game4);
 enterBtn4.addEventListener("click", inputWord4);
+
+
+// ----- WHEELS ----- //
+
+const wheels = 
+[
+    {
+        wheelsWord:"fire truck",
+        wheelsHint: "It is a large vehicle which carries firefighters and equipment for putting out fires.",
+        wheelsBlank: "F_R_ _RU__"
+    },
+
+    {
+        wheelsWord:"race car",
+        wheelsHint: "It is a vehicle designed and built for speed, performance, and competition. These cars are made for racing and are found at racetracks or racing circuits rather than on the street.",
+        wheelsBlank: "__CE C_R"
+    },
+
+    {
+        wheelsWord:"bicycle",
+        wheelsHint: "A two-wheeled steerable machine that is pedaled by the rider's feet.",
+        wheelsBlank: "B__Y__E"
+    },
+    
+]
+
+const wordText5 = document.querySelector(".wheels-word"),
+hintText5 = document.querySelector(".wheels-hint span");
+inputField5 = document.querySelector("#gtext5");
+skipBtn5 = document.querySelector(".skip-word5");
+enterBtn5 = document.querySelector(".enter-word5");
+
+let correctAnswer5;
+
+const game5 = () => {
+    let randomObj5 = wheels[Math.floor(Math.random() * wheels.length)];
+    let wordArray5 = randomObj5.wheelsBlank.split("");
+    
+
+    wordText5.innerText = wordArray5.join("");
+    hintText5.innerText = randomObj5.wheelsHint;
+    correctAnswer5 = randomObj5.wheelsWord.toLowerCase();
+    console.log(randomObj5);
+}
+game5();
+
+const inputWord5 = () => {
+    let userWord = inputField5.value.toLocaleLowerCase();
+    var audio = new Audio("assets/music/yehey.mp3");
+    if(!userWord) return alert('Please enter your answer.'); document.getElementById("gtext5").value = "";
+    if(userWord !== correctAnswer5) return alert('Your answer is incorrect.');
+    if(userWord == correctAnswer5) audio.play();
+    alert("Wow! Your answer is correct!");
+    document.getElementById("gtext5").value = "";
+    game5();
+}
+
+skipBtn5.addEventListener("click", game5);
+enterBtn5.addEventListener("click", inputWord5);
